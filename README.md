@@ -1,0 +1,2 @@
+# KakuroSolver
+Basic kakuro solver
