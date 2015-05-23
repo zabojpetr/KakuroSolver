@@ -1,0 +1,15 @@
+\section*{Typy}
+Nový typ v této implementaci je pouze jeden
+\begin{minted}{haskell}
+type KakuroCell = (Int,Int,Int)
+\end{minted}
+kde
+\begin{enumerate}
+\item Int má hodnoty -2 až 9, kde -2 určuje prázdný blok, -1 určuje pomocný blok tzn. určuje sumu v řádku a sloupci, 0 je pro nevyplněnou buňku a 1 až 9 pro vyplněnou buňku
+\item Int má hodnoty 0 až 45 a určuje sumu pro řádek, 0 znamená, že neví vyplněno
+\item Int je to samé jako 2. Int pouze pro sumu sloupce
+\end{enumerate}
+Pokud tedy chceme zapsat nevyplněnou buňku bude to vypadat následovně
+\begin{minted}{haskell}
+let nevyplnenaBunka = (0,0,0)
+\end{minted}

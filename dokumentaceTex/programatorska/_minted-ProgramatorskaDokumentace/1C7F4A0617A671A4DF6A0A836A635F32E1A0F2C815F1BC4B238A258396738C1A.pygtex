@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k+kr}{type} \PYGdefault{k+kt}{KakuroCell} \PYGdefault{o+ow}{=} \PYGdefault{p}{(}\PYGdefault{k+kt}{Int}\PYGdefault{p}{,}\PYGdefault{k+kt}{Int}\PYGdefault{p}{,}\PYGdefault{k+kt}{Int}\PYGdefault{p}{)}
+\end{Verbatim}

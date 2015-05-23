@@ -1,0 +1,37 @@
+\section*{Funkce}
+
+\haskell/kakuro::[KakuroCell]->IO()/
+Pokud dostane vyplněné kakuro, pak ho zkontroluje a vypíše zda je vyplněno správně nebo špatně.
+Pokud dostane nevyplněné kakuro, pak ho vyhodnotí a vrátí výsledek.
+\\\\
+
+\haskell/solve::[KakuroCell]->[KakuroCell]/
+Zavolá funkci \haskellline/calculationIntersect/ na vstup a zkontroluje výsledek
+\begin{enumerate}
+\item Pokud je výsledek hotové řešení vrátí ho
+\item Pokud je výsledek stejný jako vstup, pak zavolá \haskell/calculationRandom/
+\item Jinak zavolá sám sebe na výsledek
+\end{enumerate}
+Tato funkce obstarává cyklus, kde v každé iteraci dojde k dalšímu vyplnění kakura nebo vrátí výýsledek
+\\\\
+
+\haskell/calculationIntersect'::[KakuroCell]->[Int]->[KakuroCell]/
+Tato funkce je volaná z pomocné funkce \haskellline/calculationIntersect::[KakuroCell] ->[KakuroCell]/, která pouze ke vstupu přidá seznam indexů buněk, které nejsou vyplněny.
+\\
+\haskellline/calculationIntersect'/ si zjistí kombinace možné na řádku a v sloupci a udělá průnik. 
+Pokud je průnik jednoznačný (tzn. obsahuje pouze jedno číslo), pak ho dosadím.
+A toto zopakuji pro každou nevyplněnou buňku.
+\\\\
+
+\haskell/calculationRandom'::[KakuroCell]->[KakuroCell]/
+Tato funkce je volána z pomocné funkce \haskellline/calculationRandom::[KakuroCell] ->[KakuroCell]/, která pouze ke vstupu přidá pozici první nevyplněné buňky a pole možných průniků kombinací na řádku a v sloupci.
+\\
+\haskellline/calculationRandom'/ vytvoří nové kakuro s první možnou hodnotou na pozici a spustí \haskellline/solve/.
+\begin{enumerate}
+\item Pokud je to hotové a validní řešení, pak vrátím výsledek
+\item Jinak zavolá sama sebe na zbylé možné hodnoty na pozici
+\end{enumerate}
+Tato funkce musí být implementováma, protože ne všechny situace jsou vyřešit pomocí průniků.
+\\\\
+
+Další funkce jsou triviální a jejich popis se nachází jako komentář v kódu
